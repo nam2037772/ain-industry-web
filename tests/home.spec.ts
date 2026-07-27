@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("아인산업 공식 웹서비스 허브 E2E 테스트", () => {
   test.beforeEach(async ({ page }) => {
-    // basePath가 적용된 주소로 명시적 이동
+    // basePath가 적용된 주소로 이동
     await page.goto("/ain-industry-web");
   });
 
@@ -12,11 +12,12 @@ test.describe("아인산업 공식 웹서비스 허브 E2E 테스트", () => {
 
   test("2. 메인 히어로 영역의 헤드라인 및 메시지 검증", async ({ page }) => {
     const heading = page.locator("h1");
-    await expect(heading).toContainText("건설 현장의 경험을");
-    await expect(heading).toContainText("웹서비스로 만듭니다");
+    // 새 디자인에 맞춘 텍스트 검증
+    await expect(heading).toContainText("건설 실무를");
+    await expect(heading).toContainText("웹서비스로 만듭니다.");
 
     const description = page.locator("p");
-    await expect(description.first()).toContainText("아인산업은 건설·안전·현장관리");
+    await expect(description.first()).toContainText("현장에서 반복되는 계산");
   });
 
   test("3. 회사 정체성 검증 (아인산업 개인사업자 주/부업종)", async ({ page }) => {
@@ -35,9 +36,9 @@ test.describe("아인산업 공식 웹서비스 허브 E2E 테스트", () => {
   });
 
   test("5. 웹서비스 리스트 중 링크 준비 중 상태 검증", async ({ page }) => {
-    // border-slate-200 클래스를 명확히 가진 카드 div 중에서 검토 대상을 필터링합니다.
-    const formworkCard = page.locator("div.border-slate-200").filter({
-      has: page.locator("h4", { hasText: "거푸집·동바리 구조검토" })
+    // border 스타일을 가진 카드 div 중에서 h3 자식을 기준으로 검색합니다.
+    const formworkCard = page.locator("div.border").filter({
+      has: page.locator("h3", { hasText: "거푸집·동바리 구조검토" })
     }).first();
     await expect(formworkCard).toContainText("링크 준비 중");
     

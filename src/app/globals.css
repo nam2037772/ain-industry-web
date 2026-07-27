@@ -4,9 +4,9 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --muted: #475569;
-  --accent: #0d9488;
-  --accent-hover: #0f766e;
+  --muted: #64748b;
+  --accent: #1d4ed8; /* B2B SaaS 느낌의 청색/블루 계열 */
+  --accent-hover: #1e40af;
   --border: #e2e8f0;
 }
 
@@ -17,7 +17,7 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-border-custom: var(--border);
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
 }
 
 body {
@@ -26,23 +26,22 @@ body {
   font-family: var(--font-sans);
 }
 
-/* 스크롤바 커스텀 */
+/* 스크롤바 커스텀 (미니멀하게 변경) */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 
-/* 스무스 스크롤 */
 html {
   scroll-behavior: smooth;
 }
