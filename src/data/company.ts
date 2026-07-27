@@ -24,8 +24,8 @@ export const companyInfo: CompanyInfo = {
   primaryBiz: "응용 소프트웨어 개발 및 공급업",
   secondaryBiz: "컴퓨터 프로그래밍 서비스업",
   address: "제주특별자치도 서귀포시 성산읍 풍천로 77-23",
-  email: "", // 비워둠 (실제 필요시 입력)
-  phone: "", // 비워둠 (실제 필요시 입력)
+  email: "inernet@naver.com",
+  phone: "010-5638-0103",
   ainsafeMallUrl: "", // (주)아인산업안전 쇼핑몰 URL (빈 값이면 '링크 준비 중' 처리)
 };
 
