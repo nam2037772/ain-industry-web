@@ -43,12 +43,16 @@ export default function Hero() {
             <div className="border border-slate-300 rounded-none bg-white p-2">
               <Image
                 src="/images/formwork_preview.jpg"
-                alt="아인산업 거푸집 구조검토 웹서비스 실제 실행 화면 캡처"
+                alt="아인산업 거푸집 구조검토 웹서비스 UI 디자인 콘셉트 예시"
                 width={800}
                 height={450}
                 priority
                 className="w-full h-auto object-cover border border-slate-200"
               />
+              {/* 이미지 캡션: UI 콘셉트 명시 (E2E 테스트 매칭 조건) */}
+              <div className="text-[10px] text-slate-400 mt-2">
+                * 본 이미지는 실제 프로그램 실행 화면이 아닌 개발 중인 UI 콘셉트 예시입니다.
+              </div>
             </div>
           </div>
 

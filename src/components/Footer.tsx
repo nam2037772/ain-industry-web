@@ -12,13 +12,13 @@ export default function Footer() {
         {/* 상단 3단 명세 영역 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* 기업 아이덴티티 */}
+          {/* 기업 설명 */}
           <div className="space-y-3">
             <span className="text-sm font-extrabold text-white tracking-widest block">
               AIN INDUSTRY
             </span>
             <p className="text-slate-400 leading-relaxed max-w-xs">
-              현장 자재 시공 경험을 이식한 실무 소프트웨어 개발을 주도하는 정보통신업체입니다.
+              건설·안전·현장관리 분야의 복잡한 연산과 수작업을 간단한 브라우저 인터페이스로 해결해 주는 응용 소프트웨어 개발사입니다.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
 
         </div>
 
-        {/* 하단 카피라이트 및 법인 명세 */}
+        {/* 하단 카피라이트 및 법인 관계 공지 */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between text-[10px] text-slate-500 gap-4">
           <p>© {currentYear} AIN INDUSTRY. All rights reserved.</p>
           <p>아인산업(개인사업자)과 ㈜아인산업안전(법인사업자)은 법률상 및 사업자 상으로 다른 독립 개체입니다.</p>

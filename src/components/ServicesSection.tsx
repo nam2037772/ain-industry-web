@@ -8,8 +8,8 @@ export default function ServicesSection() {
   const coreServices = [
     {
       repo: "formwork-review-pro",
-      title: "거푸집 및 동바리 구조검토",
-      desc: "슬래브 거푸집과 동바리의 설계 하중 및 구조 안전성을 다각도로 검토하고, 계산 상세와 조립 배치도를 포함한 구조안전성 검토 보고서를 자동으로 생성합니다.",
+      title: "거푸집·동바리 구조검토",
+      desc: "슬래브 거푸집과 동바리의 설계 하중 및 구조안전성을 KDS 설계 기준에 맞추어 시뮬레이션하고 보고서를 구성해 주는 계산 웹서비스입니다.",
       img: "/images/formwork_preview.jpg",
       features: [
         "슬래브 두께 및 고정·활하중 연산식 자동 매핑",
@@ -56,6 +56,11 @@ export default function ServicesSection() {
     }
   ];
 
+  // 핵심 4종 외 서비스
+  const otherServices = webServices.filter(
+    s => !coreServices.some(core => core.repo === s.repository)
+  );
+
   return (
     <section id="services" className="py-20 bg-white border-b border-slate-200 scroll-mt-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -68,8 +73,8 @@ export default function ServicesSection() {
           <h2 className="text-3xl font-black text-[#06101e] tracking-tight">
             건설 실무 솔루션
           </h2>
-          <p className="mt-4 text-sm text-slate-550 max-w-xl">
-            불필요한 기능 나열 없이, 현장의 시공 안전 확보와 보고서 수작업 단축을 목표로 입증된 네 가지 필수 핵심 서비스를 공급합니다.
+          <p className="mt-4 text-sm text-slate-500 max-w-xl">
+            불필요한 과장 없이, 현장의 시공 안전 확보와 보고서 수작업 단축을 목표로 연구 개발 중인 핵심 웹서비스군을 소개합니다.
           </p>
         </div>
 
@@ -83,7 +88,7 @@ export default function ServicesSection() {
                 className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
               >
                 
-                {/* 텍스트 설명 영역 (E2E 테스트 통과를 위한 div.border 클래스 적용) */}
+                {/* 텍스트 설명 영역 (E2E 테스트용 div.border 클래스 적용) */}
                 <div className={`lg:col-span-5 border border-transparent p-1 ${isEven ? "lg:order-last" : ""}`}>
                   
                   {/* 서비스명 (E2E 테스트 호환용 h3 태그) */}
@@ -109,7 +114,7 @@ export default function ServicesSection() {
                     </ul>
                   </div>
 
-                  {/* 서비스 바로가기 버튼 (E2E 테스트 기준 충족: 링크 없을 때 '링크 준비 중' + 'cursor-not-allowed') */}
+                  {/* 서비스 바로가기 버튼 (실제 링크 유무에 따라 활성화 분기 처리) */}
                   <div className="pt-4 border-t border-slate-100">
                     {service.url ? (
                       <a
@@ -121,30 +126,63 @@ export default function ServicesSection() {
                         웹서비스 실행
                       </a>
                     ) : (
+                      // E2E 테스트 통과를 위한 배포 준비 중 상태 뱃지
                       <div className="inline-flex items-center justify-center rounded-xs bg-slate-100 text-slate-400 px-5 py-2.5 text-xs font-semibold border border-slate-200 cursor-not-allowed">
-                        링크 준비 중
+                        배포 준비 중
                       </div>
                     )}
                   </div>
 
                 </div>
 
-                {/* 실제 화면 이미지 영역 (Autodesk ACC 스타일 대형 스크린샷 노출) */}
+                {/* 실제 화면 이미지 영역 및 UI 콘셉트 캡션 명시 */}
                 <div className="lg:col-span-7">
                   <div className="border border-slate-250 bg-white p-1">
                     <Image
                       src={service.img}
-                      alt={`${service.title} 실제 프로그램 실행 화면 캡처`}
+                      alt={`${service.title} UI 콘셉트 예시`}
                       width={700}
                       height={400}
                       className="w-full h-auto object-cover border border-slate-200"
                     />
+                    <div className="text-[10px] text-slate-400 mt-2">
+                      * 본 이미지는 실제 프로그램 실행 화면이 아닌 개발 중인 UI 콘셉트 예시입니다.
+                    </div>
                   </div>
                 </div>
 
               </div>
             );
           })}
+        </div>
+
+        {/* 3. 기타 전체 서비스 목록 - 연구 및 개발 중인 도구 영역으로 개칭 */}
+        <div className="pt-20 border-t border-border-light max-w-3xl mt-24">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-4">
+            연구 및 개발 중인 도구
+          </span>
+          <div className="divide-y divide-border-light text-xs">
+            {otherServices.map((service) => (
+              <div key={service.repository} className="py-3 flex justify-between items-center">
+                <span className="font-medium text-slate-700">{service.title}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] text-slate-400">{service.status}</span>
+                  {service.url ? (
+                    <a
+                      href={service.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-accent hover:text-accent-hover"
+                    >
+                      실행하기
+                    </a>
+                  ) : (
+                    <span className="text-slate-350">배포 준비 중</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
