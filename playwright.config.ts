@@ -19,7 +19,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "npm run dev",
-    url: "http://localhost:3000/ain-industry-web", // 서버가 준비 완료되었음을 판단할 감지용 URL
+    url: "http://localhost:3000", // 서버가 준비 완료되었음을 판단할 감지용 URL
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },

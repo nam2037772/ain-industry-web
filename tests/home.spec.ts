@@ -2,8 +2,8 @@ import { test, expect } from "@playwright/test";
 
 test.describe("아인산업 공식 웹서비스 허브 사실성 검증 및 E2E 테스트", () => {
   test.beforeEach(async ({ page }) => {
-    // basePath가 적용된 주소로 이동
-    await page.goto("/ain-industry-web");
+    // Vercel 배포: basePath 없이 루트에서 서비스
+    await page.goto("/");
   });
 
   test("1. 페이지 메타데이터(타이틀) 검증", async ({ page }) => {
