@@ -12,7 +12,7 @@ export default function CompanyStatsAndConnection() {
   });
 
   return (
-    <section id="connection" className="py-20 bg-white border-b border-slate-200 scroll-mt-14">
+    <section id="connection" className="py-14 sm:py-20 bg-white border-b border-slate-200 scroll-mt-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="text-xs font-bold text-accent tracking-widest uppercase block mb-3">
@@ -28,7 +28,7 @@ export default function CompanyStatsAndConnection() {
             동바리 안전 데이터를 참고하고 제품 기능 보완 연구를 수행하고 있습니다.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-xs pt-6 border-t border-border-light">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-xs pt-6 border-t border-slate-200">
             
             {/* 법인 사업자 구분 안내 */}
             <div className="space-y-2">

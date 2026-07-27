@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full bg-white border-b border-slate-200 sticky top-0 z-50 h-14 flex items-center">
+    <header className="w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50 h-14 flex items-center">
       <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         <div className="flex h-full items-center justify-between">
           
@@ -41,7 +41,7 @@ export default function Header() {
           <div className="hidden md:flex">
             <a
               href="#services"
-              className="inline-flex items-center justify-center rounded-xs bg-[#06101e] text-white px-4 py-2 text-xs font-bold hover:bg-accent transition-colors"
+              className="inline-flex items-center justify-center rounded-lg bg-[#06101e] text-white px-4 py-2 text-xs font-bold hover:bg-[#006e9a] transition-all duration-200 hover:shadow-md"
             >
               웹서비스 이용하기
             </a>
@@ -93,7 +93,7 @@ export default function Header() {
             <a
               href="#services"
               onClick={() => setIsOpen(false)}
-              className="block text-center rounded-xs bg-[#06101e] text-white py-2.5 text-xs font-bold"
+              className="block text-center rounded-lg bg-[#06101e] text-white py-2.5 text-xs font-bold hover:bg-[#006e9a] transition-colors"
             >
               웹서비스 이용하기
             </a>

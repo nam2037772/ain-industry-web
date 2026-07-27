@@ -157,11 +157,11 @@ export default function ServicesSection() {
         </div>
 
         {/* 3. 기타 전체 서비스 목록 - 연구 및 개발 중인 도구 영역으로 개칭 */}
-        <div className="pt-20 border-t border-border-light max-w-3xl mt-24">
+        <div className="pt-16 border-t border-slate-200 max-w-3xl mt-20">
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-4">
             연구 및 개발 중인 도구
           </span>
-          <div className="divide-y divide-border-light text-xs">
+          <div className="divide-y divide-slate-200 text-xs">
             {otherServices.map((service) => (
               <div key={service.repository} className="py-3 flex justify-between items-center">
                 <span className="font-medium text-slate-700">{service.title}</span>

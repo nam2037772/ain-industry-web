@@ -8,7 +8,7 @@ export default function DevelopmentDirection() {
   ];
 
   return (
-    <section id="development" className="py-20 bg-white border-b border-slate-200 scroll-mt-14">
+    <section id="development" className="py-14 sm:py-20 bg-slate-50 border-b border-slate-200 scroll-mt-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="text-xs font-bold text-accent tracking-widest uppercase block mb-3">
@@ -21,15 +21,23 @@ export default function DevelopmentDirection() {
             기획실에서 끝나는 소프트웨어가 아닌, 현장에서 시공자들과 소통하며 함께 다듬어 나가는 점진적 고도화 방식을 준수합니다.
           </p>
 
-          <div className="space-y-8 pt-8 border-t border-slate-100">
-            {steps.map((step) => (
-              <div key={step.num} className="flex gap-5 items-start text-xs sm:text-sm">
-                <span className="font-mono font-bold text-slate-400 shrink-0 text-base">
-                  {step.num}
-                </span>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-[#06101e]">{step.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed max-w-2xl">{step.desc}</p>
+          {/* 타임라인 카드 시퀀스 */}
+          <div className="space-y-6">
+            {steps.map((step, index) => (
+              <div key={step.num} className="relative">
+                {index < steps.length - 1 && <div className="timeline-line" />}
+                <div className="relative flex gap-5 items-start">
+                  {/* 번호 배지 */}
+                  <div className="relative z-10 shrink-0 w-10 h-10 rounded-full bg-white border-2 border-[#006e9a] flex items-center justify-center shadow-sm">
+                    <span className="font-mono font-bold text-[#006e9a] text-xs">
+                      {step.num}
+                    </span>
+                  </div>
+                  {/* 내용 카드 */}
+                  <div className="flex-1 bg-white rounded-xl border border-slate-200 p-5 hover-lift">
+                    <h4 className="font-bold text-[#06101e] mb-1.5 text-sm">{step.title}</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
+                  </div>
                 </div>
               </div>
             ))}

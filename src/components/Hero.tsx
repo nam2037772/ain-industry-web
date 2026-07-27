@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white py-16 lg:py-24 border-b border-slate-200">
+    <section className="bg-gradient-to-br from-white via-slate-50 to-white py-14 sm:py-16 lg:py-24 border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -25,13 +25,13 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-xs bg-[#006e9a] hover:bg-[#005679] text-white px-5 py-3.5 text-xs font-bold transition-colors"
+                className="inline-flex items-center justify-center rounded-lg bg-[#006e9a] hover:bg-[#005679] text-white px-5 py-3.5 text-xs font-bold transition-all duration-200 hover:shadow-md"
               >
                 웹서비스 살펴보기
               </a>
               <a
                 href="#identity"
-                className="inline-flex items-center justify-center rounded-xs border border-slate-350 bg-white hover:bg-slate-50 text-slate-700 px-5 py-3.5 text-xs font-bold transition-colors"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 px-5 py-3.5 text-xs font-bold transition-all duration-200 hover:border-slate-400"
               >
                 아인산업 소개
               </a>
@@ -40,14 +40,14 @@ export default function Hero() {
 
           {/* 우측: 실제 거푸집 구조검토 프로그램 실행 화면 캡처 대형 노출 */}
           <div className="lg:col-span-6">
-            <div className="border border-slate-300 rounded-none bg-white p-2">
+            <div className="product-frame bg-white p-2">
               <Image
                 src="/images/formwork_preview.jpg"
                 alt="아인산업 거푸집 구조검토 웹서비스 UI 디자인 콘셉트 예시"
                 width={800}
                 height={450}
                 priority
-                className="w-full h-auto object-cover border border-slate-200"
+                className="w-full h-auto object-cover"
               />
               {/* 이미지 캡션: UI 콘셉트 명시 (E2E 테스트 매칭 조건) */}
               <div className="text-[10px] text-slate-400 mt-2">

@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="bg-[#06101e] text-slate-400 py-16 border-t border-slate-800 scroll-mt-14">
+    <footer id="footer" className="bg-[#06101e] text-slate-400 py-14 border-t border-slate-800 scroll-mt-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-xs space-y-10">
         
         {/* 상단 3단 명세 영역 */}
@@ -36,7 +36,7 @@ export default function Footer() {
             {companyInfo.phone && (
               <p>
                 전화:{" "}
-                <a href={`tel:${companyInfo.phone}`} className="hover:text-accent font-medium transition-colors">
+                <a href={`tel:${companyInfo.phone}`} className="hover:text-[#006e9a] font-medium transition-colors">
                   {companyInfo.phone}
                 </a>
               </p>
@@ -44,7 +44,7 @@ export default function Footer() {
             {companyInfo.email && (
               <p>
                 이메일:{" "}
-                <a href={`mailto:${companyInfo.email}`} className="hover:text-accent font-medium transition-colors">
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-[#006e9a] font-medium transition-colors">
                   {companyInfo.email}
                 </a>
               </p>
