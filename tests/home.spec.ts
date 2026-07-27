@@ -12,12 +12,12 @@ test.describe("아인산업 공식 웹서비스 허브 E2E 테스트", () => {
 
   test("2. 메인 히어로 영역의 헤드라인 및 메시지 검증", async ({ page }) => {
     const heading = page.locator("h1");
-    // 새 디자인에 맞춘 텍스트 검증
-    await expect(heading).toContainText("건설 실무를");
-    await expect(heading).toContainText("웹서비스로 만듭니다.");
+    // Autodesk 디자인에 맞춘 텍스트 검증
+    await expect(heading).toContainText("건설 현장의");
+    await expect(heading).toContainText("복잡한 업무를 더 간단하게");
 
     const description = page.locator("p");
-    await expect(description.first()).toContainText("현장에서 반복되는 계산");
+    await expect(description.first()).toContainText("현장 경험을 바탕으로");
   });
 
   test("3. 회사 정체성 검증 (아인산업 개인사업자 주/부업종)", async ({ page }) => {
@@ -36,9 +36,9 @@ test.describe("아인산업 공식 웹서비스 허브 E2E 테스트", () => {
   });
 
   test("5. 웹서비스 리스트 중 링크 준비 중 상태 검증", async ({ page }) => {
-    // border 스타일을 가진 카드 div 중에서 h3 자식을 기준으로 검색합니다.
+    // border 스타일을 가진 카드 div 중에서 h3 자식(거푸집 및 동바리 구조검토)을 기준으로 검색합니다.
     const formworkCard = page.locator("div.border").filter({
-      has: page.locator("h3", { hasText: "거푸집·동바리 구조검토" })
+      has: page.locator("h3", { hasText: "거푸집 및 동바리 구조검토" })
     }).first();
     await expect(formworkCard).toContainText("링크 준비 중");
     
